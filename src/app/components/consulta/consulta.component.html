@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="fase">
+          <th mat-header-cell *matHeaderCellDef>Fase Contractual</th>
+          <td mat-cell *matCellDef="let element">{{ element.fase }}</td>
+        </ng-container>
+        <ng-container matColumnDef="aplicacion">
+          <th mat-header-cell *matHeaderCellDef>Aplicación</th>
+          <td mat-cell *matCellDef="let element">{{ element.aplicacion }}</td>
+        </ng-container>
+        <ng-container matColumnDef="requisito">
+          <th mat-header-cell *matHeaderCellDef>Tipo de Requisito</th>
+          <td mat-cell *matCellDef="let element">{{ element.requisito }}</td>
+        </ng-container>
+        <ng-container matColumnDef="fecha_vencimiento">
+          <th mat-header-cell *matHeaderCellDef>Fecha de Vencimiento</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fecha_vencimiento }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="estado_documento">
+          <th mat-header-cell *matHeaderCellDef>Estado documento</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.estado_documento }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button color="primary">Ver</button>
+            <button mat-button color="primary">Editar</button>
+            <button mat-button color="primary">Eliminar</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>
